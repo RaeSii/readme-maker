@@ -7,7 +7,7 @@ function userInfo() {
         {
             type :"input",
             name:"title",
-            message:"Enter Project title"
+            message:"Enter Project Title"
         },
         {
             type :"input",
@@ -17,12 +17,12 @@ function userInfo() {
         {
             type :"input",
             name:"contributors",
-            message:"Enter Project title"
+            message:"Enter Contribution Guidelines"
         },
         {
             type :"input",
             name:"installation",
-            message:"Enter "
+            message:"Enter Installation instructions"
         },
         {
             type :"input",
@@ -31,24 +31,24 @@ function userInfo() {
         },
         {
             type :"input",
-            name:"Test",
-            message:"Enter Project title"
+            name:"test",
+            message:"Enter Tests Instructions"
         },
         {
             type :"input",
-            name:"GitHub",
-            message:"Project Usage Requireme"
+            name:"github",
+            message:"Enter GitHub User Name  "
         },
         {
             type :"list",
-            name:"License",
-            message:"Enter Project title",
+            name:"license",
+            message:"Enter License",
             choices: ["MIT", "ISC", "GPL", "APACHE"]
         },
         {
             type :"input",
-            name:"Email",
-            message:"Enter Email"
+            name:"email",
+            message:"Enter your Email"
         },
         
 
@@ -57,27 +57,23 @@ function userInfo() {
         var readmeContent = `
 # ${answers.title}
 
+## Description
+${answers.description}
+
 ## Table of Contents:
 * [Installation](#installation)
-* [GitHub](#github)
 * [Usage](#usage) 
-* [Description](#description)
 * [License](#license)
 * [Contributors](#contributors)
-* [Tests](#tests)
-* [Email](#Email)
+* [Tests](#test)
+* [GitHub](#github)
+* [Email](#email)
 
-### Instalation
-${answers.instllation}
-
-### GitHub
-${answers.github}
+### Installation
+${answers.installation}
 
 ### Usage
 ${answers.usage}
-
-### Description
-${answers.description}
 
 ### License
 ![GitHub license](https://img.shields.io/badge/license-${answers.license}-blue.svg)
@@ -86,7 +82,10 @@ ${answers.description}
 ${answers.contributors}
 
 ### Tests
-${answers.tests}
+${answers.test}
+
+### GitHub
+${answers.github}
 
 ### Email
 If you have any questions, feel free to reach me at ${answers.email}
@@ -94,6 +93,10 @@ If you have any questions, feel free to reach me at ${answers.email}
 }
         `
         console.log(readmeContent);
+        fs.writeFileSync("README.md", readmeContent, function(err){
+            if(err) throw err
+        })
+        console.log("readme generated")
     })
 }
 
