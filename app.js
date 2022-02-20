@@ -32,12 +32,12 @@ function userInfo() {
         {
             type :"input",
             name:"test",
-            message:"Enter Tests Instructions"
+            message:"Enter Test Instructions"
         },
         {
             type :"input",
             name:"github",
-            message:"Enter GitHub User Name  "
+            message:"Enter GitHub User Name"
         },
         {
             type :"list",
