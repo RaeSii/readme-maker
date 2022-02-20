@@ -54,8 +54,7 @@ function userInfo() {
 
     ]).then(function(answers){
         console.log(answers);
-        var readmeContent = `
-# ${answers.title}
+        var readmeContent = `# ${answers.title}
 
 ## Description
 ${answers.description}
@@ -85,12 +84,12 @@ ${answers.contributors}
 ${answers.test}
 
 ### GitHub
-${answers.github}
+[${answers.github}](https://github.com/${answers.github})
 
 ### Email
 If you have any questions, feel free to reach me at ${answers.email}
 
-}
+
         `
         console.log(readmeContent);
         fs.writeFileSync("README.md", readmeContent, function(err){
